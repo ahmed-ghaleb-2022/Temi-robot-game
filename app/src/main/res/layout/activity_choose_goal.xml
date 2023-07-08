@@ -11,6 +11,12 @@
         android:layout_height="wrap_content"
         android:max="100" />
 
+    <TextView
+        android:id="@+id/txtSeconds"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="20" />
+
     <Button
         android:id="@+id/btnConfirm"
         android:layout_width="wrap_content"

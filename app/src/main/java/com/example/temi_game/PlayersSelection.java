@@ -12,14 +12,23 @@ public class PlayersSelection extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_players_selection);
 
-        // Assuming your buttons have ids btn2, btn3 and btn4
         Button btn2 = findViewById(R.id.btn2);
         btn2.setOnClickListener(v -> {
             GameData.getInstance().setPlayerCount(2);
             navigateToGoalSelection();
         });
 
-        // Add similar logic for the rest of the buttons
+        Button btn3 = findViewById(R.id.btn3);
+        btn3.setOnClickListener(v -> {
+            GameData.getInstance().setPlayerCount(3);
+            navigateToGoalSelection();
+        });
+
+        Button btn4 = findViewById(R.id.btn4);
+        btn4.setOnClickListener(v -> {
+            GameData.getInstance().setPlayerCount(4);
+            navigateToGoalSelection();
+        });
     }
 
     private void navigateToGoalSelection() {
