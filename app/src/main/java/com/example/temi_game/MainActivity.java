@@ -16,7 +16,12 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void StartMainMenu(View view) {
-        Intent intent = new Intent(MainActivity.this, MainMenu.class);
+        Intent intent = new Intent(MainActivity.this, FirstScreen.class);
+        startActivity(intent);
+    }
+
+    public void GoTOFirstActivity(View view){
+        Intent intent = new Intent(MainActivity.this, FirstScreen.class);
         startActivity(intent);
     }
 }
