@@ -38,6 +38,15 @@ public class GameActivity extends AppCompatActivity {
 
         playerContainer = findViewById(R.id.playerContainer);
         createPlayerViews();
+
+        Button btnExit = findViewById(R.id.btnExitGame);
+        btnExit.setOnClickListener(v -> {
+            // Stop all timers before exiting the game
+            for (Player player : players) {
+                player.stopTimer();
+            }
+            finishAffinity();
+        });
     }
 
     private void createPlayerViews() {
@@ -59,12 +68,16 @@ public class GameActivity extends AppCompatActivity {
     }
 
     private void startTimer(Player player) {
-        if (currentPlayer != null) {
+        if (currentPlayer == player && player.isTimerRunning()) {
             currentPlayer.stopTimer();
+            currentPlayer = null;
+        } else {
+            if (currentPlayer != null) {
+                currentPlayer.stopTimer();
+            }
+            currentPlayer = player;
+            currentPlayer.startTimer();
         }
-
-        currentPlayer = player;
-        currentPlayer.startTimer();
     }
 
     class Player {
@@ -74,6 +87,7 @@ public class GameActivity extends AppCompatActivity {
         private Button playerButton;
         private ProgressBar progressBar;
         private CountDownTimer timer;
+        private boolean timerRunning = false;
 
         public Player(int id, int goalSeconds) {
             this.id = id;
@@ -111,12 +125,18 @@ public class GameActivity extends AppCompatActivity {
                 public void onFinish() {
                 }
             }.start();
+            timerRunning = true;
         }
 
         public void stopTimer() {
             if (timer != null) {
                 timer.cancel();
             }
+            timerRunning = false;
+        }
+
+        public boolean isTimerRunning() {
+            return timerRunning;
         }
 
         private void updateProgress() {
