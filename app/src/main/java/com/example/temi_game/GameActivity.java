@@ -53,6 +53,7 @@ public class GameActivity extends AppCompatActivity {
         for (Player player : players) {
             Button playerButton = new Button(this);
             ProgressBar progressBar = new ProgressBar(this, null, android.R.attr.progressBarStyleHorizontal);
+            TextView timerText = new TextView(this);
 
             playerButton.setText("Player " + (player.id + 1));
             playerButton.setOnClickListener(v -> {
@@ -61,9 +62,11 @@ public class GameActivity extends AppCompatActivity {
 
             playerContainer.addView(playerButton);
             playerContainer.addView(progressBar);
+            playerContainer.addView(timerText);
 
             player.setPlayerButton(playerButton);
             player.setProgressBar(progressBar);
+            player.setTimerText(timerText);
         }
     }
 
@@ -86,6 +89,7 @@ public class GameActivity extends AppCompatActivity {
         private int goalSeconds;
         private Button playerButton;
         private ProgressBar progressBar;
+        private TextView timerText;
         private CountDownTimer timer;
         private boolean timerRunning = false;
 
@@ -103,9 +107,14 @@ public class GameActivity extends AppCompatActivity {
             this.progressBar = progressBar;
         }
 
+        public void setTimerText(TextView timerText) {
+            this.timerText = timerText;
+        }
+
         public void incrementSeconds() {
             totalSeconds++;
             updateProgress();
+            timerText.setText(totalSeconds + "/" + goalSeconds);
             if (totalSeconds >= goalSeconds) {
                 stopTimer();
                 playerButton.setBackgroundColor(Color.GREEN);
