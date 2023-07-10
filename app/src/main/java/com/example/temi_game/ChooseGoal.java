@@ -23,7 +23,7 @@ public class ChooseGoal extends AppCompatActivity {
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                txtSeconds.setText(String.valueOf(progress));
+                txtSeconds.setText(String.valueOf(progress)+" seconds");
             }
 
             @Override

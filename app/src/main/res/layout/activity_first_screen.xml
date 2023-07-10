@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/pxfuel"
+    android:gravity="center"
+    android:orientation="vertical">
 
     <Button
         android:id="@+id/btnPlay"
-        android:layout_width="wrap_content"
+        android:layout_width="444dp"
         android:layout_height="wrap_content"
-        android:text="Play"
-        android:drawableStart="@android:drawable/ic_input_add"
-        android:backgroundTint="@color/green" />
+        android:layout_marginBottom="150px"
+        android:backgroundTint="@color/green"
+
+        android:text="Starten"
+        android:textSize="60sp" />
 
     <Button
         android:id="@+id/btnExit"
-        android:layout_width="wrap_content"
+        android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:text="Exit"
-        android:drawableStart="@android:drawable/ic_delete"
-        android:backgroundTint="@color/red" />
+        android:backgroundTint="@color/red"
+
+        android:text="Schließen"
+        android:textSize="60sp" />
 </LinearLayout>

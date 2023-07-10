@@ -2,34 +2,49 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center">
+    android:background="@drawable/pxfuel"
+    android:gravity="center"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="120px"
-        android:text="Select your Goal"
+        android:text="Wählen Sie Ihr Ziel aus"
         android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textColorLink="#FFFFFF"
         android:textSize="60sp" />
 
     <SeekBar
         android:id="@+id/seekBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:max="100" />
+        android:layout_width="420dp"
+        android:layout_height="20dp"
+        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        android:max="100"
+        android:progressBackgroundTint="#031CFF"
+        android:scaleX="3"
+        android:scaleY="3"
+        android:scrollbarSize="50dp"
+        android:translationX="10dp" />
 
     <TextView
         android:id="@+id/txtSeconds"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="20" />
+        android:layout_marginTop="20dp"
+        android:text="20"
+        android:textColor="#FFFFFF"
+        android:textSize="48sp" />
 
     <Button
         android:id="@+id/btnConfirm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Confirm" />
+        android:layout_marginTop="30dp"
+        android:text="Bestätigen"
+        android:textSize="48sp" />
 
 </LinearLayout>
