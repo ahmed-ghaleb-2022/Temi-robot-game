@@ -5,6 +5,15 @@
     android:orientation="vertical"
     android:gravity="center">
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="120px"
+        android:text="Select your Goal"
+        android:textAlignment="center"
+        android:textSize="60sp" />
+
     <SeekBar
         android:id="@+id/seekBar"
         android:layout_width="match_parent"
@@ -22,4 +31,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Confirm" />
+
 </LinearLayout>
