@@ -176,7 +176,7 @@ public class GameActivity extends AppCompatActivity implements OnRobotReadyListe
                 playerButton.setBackgroundColor(Color.GREEN);
                 progressBar.setProgressDrawable(new ColorDrawable(Color.GREEN));
                 TextView winnerText = new TextView(GameActivity.this);
-                winnerText.setText("Du hast dein Ziel erreicht!");
+                winnerText.setText("Sie haben Ihr Ziel erreicht!");
                 winnerText.setTextSize(60);
                 winnerText.setTextColor(Color.rgb(255,255,33));
                 playerContainer.addView(winnerText);
