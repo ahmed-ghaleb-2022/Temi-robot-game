@@ -17,19 +17,19 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 
-import com.robotemi.sdk.Robot;
-import com.robotemi.sdk.listeners.OnRobotReadyListener;
+//import com.robotemi.sdk.Robot;
+//import com.robotemi.sdk.listeners.OnRobotReadyListener;
 
-public class GameActivity extends AppCompatActivity implements OnRobotReadyListener{
+public class GameActivity extends AppCompatActivity {
     private ArrayList<Player> players;
     private int goalSeconds;
     private Handler handler = new Handler(Looper.getMainLooper());
     private Player currentPlayer;
     private LinearLayout playerContainer; // Assuming a LinearLayout to contain all players' views
 
-    Robot mRobot; //here is robot object
+    /*Robot mRobot; //here is robot object
 
-    boolean isFollowing = false;
+    boolean isFollowing = false;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +37,7 @@ public class GameActivity extends AppCompatActivity implements OnRobotReadyListe
         setContentView(R.layout.activity_game);
 
         // Initialize robot instance
-        mRobot = Robot.getInstance();
+        //mRobot = Robot.getInstance();
 
         this.goalSeconds = GameData.getInstance().getGoalSeconds();
         int playerCount = GameData.getInstance().getPlayerCount();
@@ -61,7 +61,7 @@ public class GameActivity extends AppCompatActivity implements OnRobotReadyListe
         });
     }
 
-
+/*
     @Override
 
     protected void onStart() {
@@ -86,7 +86,7 @@ public class GameActivity extends AppCompatActivity implements OnRobotReadyListe
         }
     }
 
-
+*/
 
 
     private void createPlayerViews() {
@@ -184,7 +184,7 @@ public class GameActivity extends AppCompatActivity implements OnRobotReadyListe
         }
 
         public void startTimer() {
-            mRobot.beWithMe();
+            //mRobot.beWithMe();
             timer = new CountDownTimer(Long.MAX_VALUE, 1000) {
                 public void onTick(long millisUntilFinished) {
                     incrementSeconds();
@@ -197,7 +197,7 @@ public class GameActivity extends AppCompatActivity implements OnRobotReadyListe
         }
 
         public void stopTimer() {
-            mRobot.stopMovement();
+            //mRobot.stopMovement();
             if (timer != null) {
                 timer.cancel();
             }
